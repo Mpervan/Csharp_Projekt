@@ -1,0 +1,40 @@
+﻿@page "/login"
+@using ReceptiAplikacija.Data
+@using ReceptiAplikacija.Services.KorisnikService
+@inject IKorisnikService KorisnikService 
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthStateProvider
+
+<h3>Login</h3>
+
+<EditForm Model="User" OnSubmit="HandleLogin">
+	<div class="form-group">
+		<label for="username">Korisničko ime</label>
+		<InputText id="username" @bind-Value="User.Username" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="password">Lozinka</label>
+		<InputText type="password" placeholder="Password" id="password" @bind-Value="User.Password" typeof="password" class="form-control"></InputText>
+	</div>
+	<button type="submit" class="btn btn-primary">Login</button>
+
+</EditForm>
+	<div class="registracija">
+		<h5>Nemate račun?</h5>
+		<a href="/register">Registrirajte se ovdje</a>
+	</div>
+
+@code {
+	private Korisnik User = new Korisnik();
+	
+
+	private async void HandleLogin()
+	{
+				await LocalStorage.SetItemAsync<string>("username", User.Username);
+				await AuthStateProvider.GetAuthenticationStateAsync();
+				NavigationManager.NavigateTo("");
+				
+	}
+}
+	

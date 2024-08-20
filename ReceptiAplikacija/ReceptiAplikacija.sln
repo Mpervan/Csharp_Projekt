@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceptiAplikacija", "ReceptiAplikacija.csproj", "{93F59450-112C-4D04-9BF7-B15885C38C2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceptApi", "..\ReceptApi\ReceptApi.csproj", "{7807654A-BC77-48B2-806C-38888BC71DAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93F59450-112C-4D04-9BF7-B15885C38C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F59450-112C-4D04-9BF7-B15885C38C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F59450-112C-4D04-9BF7-B15885C38C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F59450-112C-4D04-9BF7-B15885C38C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7807654A-BC77-48B2-806C-38888BC71DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7807654A-BC77-48B2-806C-38888BC71DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7807654A-BC77-48B2-806C-38888BC71DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7807654A-BC77-48B2-806C-38888BC71DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0726F58D-496A-4517-8456-52E87AC4F054}
+	EndGlobalSection
+EndGlobal

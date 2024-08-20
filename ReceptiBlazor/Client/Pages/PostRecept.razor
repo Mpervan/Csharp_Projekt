@@ -1,0 +1,79 @@
+﻿@page "/post"
+@using ReceptiBlazor.Shared
+@using ReceptiBlazor.Client.Services
+@using ReceptiBlazor.Client.Services.KorisnikService
+@inject IReceptService ReceptService
+@inject IKategorijaService KategorijaService
+@inject IKorisnikService KorisnikService
+
+
+<h3>Objavi novi recept</h3>
+<h7>@error</h7>
+<h4>@message</h4>
+<EditForm Model="recept" OnSubmit="Objavi">
+	<div class="form-group">
+		<label for="ime">Naziv recepta</label>
+		<InputText id="ime" @bind-Value="recept.Name" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="ime">Link slike sa interneta</label>
+		<InputText id="slika" @bind-Value="recept.Img" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="kopis">Kratki opis</label>
+		<InputText id="kopis" @bind-Value="recept.KratkiOpis" class="form-control" rows="3"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="sastojci">Sastojci</label>
+		<InputText class="form-control" @bind-Value="recept.Sastojci" id="sastojci"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="priprema">Priprema</label>
+		<InputText class="form-control" @bind-Value="recept.Priprema" id="priprema"></InputText>
+	</div>
+	<div class="form-group">
+        <label for="body">Tip jela</label>
+		<InputSelect @bind-Value="@recept.Vege" class="form-control">
+			@foreach(var v in VegeStatus)
+			{
+				<option value="@v">@v</option>	
+			}
+		</InputSelect>
+        
+               
+    </div>
+	<button type="submit" class="btn btn-primary">Post</button>
+
+</EditForm>
+
+@code {
+	[Parameter]
+	public string message { get; set; } = null;
+	[Parameter]
+	public string error { get; set; } = null;
+	private Recept recept = new Recept();
+	private List<string> VegeStatus = new List<string>
+	{
+		"Meso",
+		"Vegetarijansko",
+		"Vegansko"
+	};
+	private void Objavi()
+	{
+		if (recept.Name == null || recept.KratkiOpis == null || recept.Sastojci == null || recept.Priprema == null || recept.Vege == null || recept.Img == null)
+		{
+			error = "Ostavili ste jedno ili više polja prazno! Molimo vas da ispunite sva polja!";
+			message = "";
+			return;
+		}
+		else
+		{
+			recept.Idkategorije = 1;
+			recept.Idkorisnik = 1;
+			ReceptService.PostRecept(recept);
+			error = "";
+			message = "Uspješno ste unijeli recept pod imenom"+recept.Name;
+		}
+	}
+}
+

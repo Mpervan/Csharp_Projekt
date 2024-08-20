@@ -1,0 +1,101 @@
+﻿@page "/post"
+@using ReceptiNoviApp.Shared
+@inject IReceptService ReceptService
+@inject IKategorijaService KategorijaService
+@inject IKorisnikService KorisnikService
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthStateProvider
+
+
+
+<h3>Objavi novi recept</h3>
+<h7>@error</h7>
+<EditForm Model="recept" OnSubmit="Objavi">
+	<div class="form-group">
+		<label for="ime">Naziv recepta</label>
+		<InputText id="ime" @bind-Value="recept.Name" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="ime">Link slike sa interneta</label>
+		<InputText id="slika" @bind-Value="recept.Img" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="kopis">Kratki opis</label>
+		<InputText id="kopis" @bind-Value="recept.KratkiOpis" class="form-control" rows="3"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="sastojci">Sastojci</label>
+		<InputText class="form-control" @bind-Value="recept.Sastojci" id="sastojci"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="priprema">Priprema</label>
+		<InputText class="form-control" @bind-Value="recept.Priprema" id="priprema"></InputText>
+	</div>
+	<div class="form-group">
+        <label for="body">Kategorija jela</label>
+		<InputSelect @bind-Value="@recept.Idkategorije" class="form-control">
+			@foreach(var v in Kategorije)
+			{
+				<option value="@v.Id">@v.Name</option>	
+			}
+		</InputSelect>
+        
+               
+    </div>
+	<div class="form-group">
+        <label for="body">Tip jela</label>
+		<InputSelect @bind-Value="@recept.Vege" class="form-control">
+			@foreach(var v in VegeStatus)
+			{
+				<option value="@v">@v</option>	
+			}
+		</InputSelect>
+        
+               
+    </div>
+	<button type="submit" class="btn btn-primary">Post</button>
+
+</EditForm>
+
+@code {
+	[Parameter]
+	public string error { get; set; } = null;
+	private Recept recept = new Recept();
+	private Korisnik korisnik = new Korisnik();
+	private List<string> VegeStatus = new List<string>
+	{
+		"Mesno ili riblje",
+		"Vegetarijansko",
+		"Vegansko"
+	}; 
+	private List<Kategorija> Kategorije = new List<Kategorija>();
+
+	protected override async Task OnInitializedAsync()
+	{
+		var authstate = await AuthStateProvider.GetAuthenticationStateAsync();
+		var user = authstate.User;
+		Kategorije = await KategorijaService.LoadKategorije();
+		korisnik = await KorisnikService.GetKorisnikByName(user.Identity.Name);
+	}
+
+	async Task Objavi()
+	{
+		if (recept.Vege == null)
+		{
+			recept.Vege = "Mesno ili riblje";
+		}
+		if (recept.Name == null || recept.KratkiOpis == null || recept.Sastojci == null || recept.Priprema == null || recept.Img == null)
+		{
+			error = "Ostavili ste jedno ili više polja prazno! Molimo vas da ispunite sva polja!";
+			return;
+		}
+		else
+		{
+			recept.Idkorisnik = korisnik.Id;
+			var result = await ReceptService.PostRecept(recept);
+			error = "";
+			Navigation.NavigateTo($"recept/{result.Id.ToString()}");
+		}
+	}
+}
+

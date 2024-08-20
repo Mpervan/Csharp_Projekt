@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Matea\\Documents\\F A K S\\C# seminar\\ReceptiAplikacija\\ReceptiAplikacija.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Matea\\Documents\\F A K S\\C# seminar\\ReceptiAplikacija\\ReceptiAplikacija.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matea\\Documents\\F A K S\\C# seminar\\ReceptiAplikacija\\ReceptiAplikacija.csproj",
+        "projectName": "ReceptiAplikacija",
+        "projectPath": "C:\\Users\\Matea\\Documents\\F A K S\\C# seminar\\ReceptiAplikacija\\ReceptiAplikacija.csproj",
+        "packagesPath": "C:\\Users\\Matea\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matea\\Documents\\F A K S\\C# seminar\\ReceptiAplikacija\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Matea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Blazored.Toast": {
+              "target": "Package",
+              "version": "[3.2.2, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Syncfusion.Blazor.Buttons": {
+              "target": "Package",
+              "version": "[20.2.0.36, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

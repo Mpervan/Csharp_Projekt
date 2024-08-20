@@ -1,0 +1,12 @@
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\bin\Debug\net6.0\ReceptiApp.Shared.deps.json
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\bin\Debug\net6.0\ReceptiApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\bin\Debug\net6.0\ReceptiApp.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.csproj.AssemblyReference.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.AssemblyInfoInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.AssemblyInfo.cs
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\refint\ReceptiApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ReceptiApp.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiApp\Shared\obj\Debug\net6.0\ref\ReceptiApp.Shared.dll

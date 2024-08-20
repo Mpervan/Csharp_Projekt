@@ -1,0 +1,79 @@
+﻿@page "/register"
+@using ReceptiApp.Shared
+@using System.Text.RegularExpressions;
+@using ReceptiApp.Client.Services.KorisnikService
+@inject IKorisnikService KorisnikService 
+
+<h3>Register</h3>
+<h7>@error</h7>
+<h4>@message</h4>
+<EditForm Model="User" OnSubmit="Registracija">
+	<div class="form-group">
+		<label for="username">Korisničko ime</label>
+		<InputText id="username" @bind-Value="User.Username" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="password">Unesite lozinku</label>
+		<InputText type="password" placeholder="Password" id="password" @bind-Value="Lozinka1" typeof="password" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="password">Ponovno unesite lozinku</label>
+		<InputText type="password" placeholder="Password" id="password" @bind-Value="Lozinka2" typeof="password" class="form-control"></InputText>
+	</div>
+	<div class="form-group">
+		<label for="email">E-mail</label>
+		<InputText id="email" @bind-Value="User.Email" class="form-control"></InputText>
+	</div>
+	
+	<button type="submit" class="btn btn-primary">Register</button>
+</EditForm>
+
+@code {
+	private Korisnik User = new Korisnik();
+	[Parameter]
+	public string Lozinka1 { get; set; } = null;
+	[Parameter]
+	public string Lozinka2 { get; set; } = null;
+	[Parameter]
+	public string message { get; set; } = null;
+	[Parameter]
+	public string error { get; set; } = null;
+
+	private void Registracija()
+	{
+		string strRegex = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+		Regex re = new Regex(strRegex, RegexOptions.IgnoreCase);
+		KorisnikService.LoadKorisnici();
+		if (Lozinka1 != Lozinka2)
+		{
+			error = "Unešene lozinke nisu jednake!";
+			message = "";
+			return;
+		}
+		if(!re.IsMatch(User.Email))
+		{
+			error = "Unesite e-mail adresu ispravnog formata!";
+			message = "";
+			return;
+		}
+		if (User.Username == null || Lozinka1 == null || Lozinka2 == null || User.Email == null)
+		{
+			error = "Ostavili ste jedno ili više polja prazno! Molimo vas da ispunite sva polja!";
+			message = "";
+			return;
+		}
+		foreach (Korisnik k in KorisnikService.korisnici)
+		{
+			if (User.Username == k.Username)
+			{
+				error = "Korisničko ime je već u upotrebi";
+				message = "";
+				return;
+			}
+		}
+		User.Password = Lozinka1;
+		error = "";
+		KorisnikService.NoviKorisnik(User);
+		message = "Uspješno ste registrirani kao korisnik pod imenom " + User.Username;
+	}
+}

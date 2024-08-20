@@ -1,0 +1,35 @@
+﻿@using ReceptiNoviApp.Shared
+@inject IReceptService ReceptService
+
+<ul class="list-unstyled">
+	@foreach(var recept in UserId == null ? Recepti : Recepti.Where(r => r.Idkorisnik == UserId))
+	{
+		<li class="media my-3">
+			<div class="media-all">
+				<div class="media-img-wrapper mr-2">
+					<a href="/recept/@recept.Id">
+						<img class="media-img" src="@recept.Img" alt="@recept.Name"/>
+					</a>
+				</div>
+				<div class="media-body">
+					<a href="/recept/@recept.Id">
+						<h4 class="mb-0">@recept.Name</h4>
+					</a>
+					<h5>@recept.Sastojci</h5>
+					<p>@recept.KratkiOpis</p>
+					<h6>@recept.Vege</h6>
+				</div>
+			</div>
+		</li>
+	}
+</ul>
+@code {
+	[Parameter]
+	public long? UserId { get; set; } = null;
+	public List<Recept> Recepti = new List<Recept>();
+	protected override async Task OnInitializedAsync()
+	{
+		Recepti = await ReceptService.LoadRecepti();
+	}
+}
+

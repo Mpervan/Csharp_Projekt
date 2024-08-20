@@ -1,0 +1,12 @@
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\bin\Debug\net6.0\ReceptiBlazor.Shared.deps.json
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\bin\Debug\net6.0\ReceptiBlazor.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\bin\Debug\net6.0\ReceptiBlazor.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.csproj.AssemblyReference.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.AssemblyInfoInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.AssemblyInfo.cs
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\refint\ReceptiBlazor.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ReceptiBlazor.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiBlazor\Shared\obj\Debug\net6.0\ref\ReceptiBlazor.Shared.dll

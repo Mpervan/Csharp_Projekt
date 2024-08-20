@@ -1,0 +1,84 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ReceptiAplikacija
+build_property.RootNamespace = ReceptiAplikacija
+build_property.ProjectDir = C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiAplikacija\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiAplikacija
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/PostRecept.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFJlY2VwdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/ReceptSadrzaj.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0U2Fkcnphai5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Shared/ReceptList.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlY2VwdExpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Shared/TopMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFRvcE1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-j72cttu11o
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-stv9m6akqy
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Matea/Documents/F A K S/C\# seminar/ReceptiAplikacija/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

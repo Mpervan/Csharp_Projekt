@@ -1,0 +1,73 @@
+﻿@page "/recept/{id}"
+@using ReceptiNoviApp.Client.Services.ReceptServices
+@using ReceptiNoviApp.Shared
+@inject IReceptService ReceptService
+@inject IRecenzijaService RecenzijaService
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager NavigationManager
+
+<div class="media-velika">
+	<div class="media-img-big-wrapper mr-2">
+		<img class="media-img-big" src="@recept.Img" alt="@recept.Name"/>
+	</div>
+	<div class="Recept-body">
+		<div class="naslovi">
+		<h2>@recept.Name</h2>
+		</div>
+		<div class="priprema">
+		<h5>Sastojci: @recept.Sastojci</h5>
+		<h6>@recept.Vege</h6>
+		<h4>Priprema:</h4>
+		<p>@recept.Priprema</p>
+		</div>
+	</div>
+	<div class="recenzija">
+		<EditForm Model="recept" OnSubmit="Ocjeni">
+		<h5>Ocjena: @ocjena</h5>
+		<InputSelect @bind-Value="@recenzija.Ocjena" class="form-check">
+			@foreach(var v in Ocjene)
+			{
+				<option value="@v">@v</option>	
+			}
+		</InputSelect>
+		<button type="submit" class="btn btn-primary">Ocjenite jelo</button>
+		</EditForm>
+		</div>
+</div>
+<div>
+	 <AuthorizeView Roles=@currentuser>
+        <Authorized> 
+	<a class="btn btn-primary" href="uredirecept/@recept.Id">
+						Uredi
+					</a>
+		</Authorized>
+	</AuthorizeView>
+</div>
+
+@code {
+	[Parameter]
+	public string Id { get; set; }
+	private Recenzija recenzija = new Recenzija();
+	private ReceptiNoviApp.Shared.Recept recept = new Recept();
+	private double ocjena = 0;
+	private string currentuser = "Admin";
+
+	private List<long> Ocjene = new List<long>
+	{
+		1,2,3,4,5
+	};
+
+	protected override async Task OnInitializedAsync()
+	{
+		recept = await ReceptService.GetReceptById(Id);
+		ocjena = await RecenzijaService.Izracunaj(Id);
+		currentuser = "Admin, User" + recept.Idkorisnik;
+	}
+	async Task Ocjeni()
+	{
+		recenzija.Idrecept = Int64.Parse(Id);
+		await RecenzijaService.PostRecenzija(recenzija);
+		ocjena = await RecenzijaService.Izracunaj(Id);
+	}
+
+}

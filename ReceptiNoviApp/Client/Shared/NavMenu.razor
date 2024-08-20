@@ -1,0 +1,88 @@
+﻿@using ReceptiNoviApp.Client.Services.KategorijaServices
+@using ReceptiNoviApp.Shared;
+@inject IKategorijaService KategorijaService
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager NavigationManager
+
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">ReceptiNoviApp</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+         <div class="dropdown-divider"></div>
+        @foreach (var kategorija in Kategorije)
+        {
+            <div class="nav-item px-3">
+            <NavLink class="nav-link" href="@kategorija.Url">
+                <span class="oi oi-@kategorija.Icon" aria-hidden="true"></span> @kategorija.Name
+            </NavLink>
+            </div>
+        }
+        <div class="dropdown-divider"></div>
+        <div class="nav-item px-3">
+            <AuthorizeView>
+                <NotAuthorized>
+                    <NavLink class="nav-link" href="login">
+                        <span class="oi oi-account-login" aria-hidden="true"></span> Login
+                    </NavLink>
+            </NotAuthorized>
+                <Authorized>
+                    <a class="nav-link" @onclick="Logout" style="cursor: pointer">
+                        <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
+                    </a>
+                    <NavLink class="nav-link"@onclick="Profile">
+                        <span class="oi oi-person" aria-hidden="true"></span> Profil
+                    </NavLink>
+                </Authorized>
+                
+            </AuthorizeView>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private List<Kategorija> Kategorije = new List<Kategorija>();
+    private bool collapseNavMenu = true;
+    private string profileLink = null;
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        Kategorije = await KategorijaService.LoadKategorije();
+        var authstate = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authstate.User;
+        profileLink = "korisnik/" + user.Identity.Name;
+        
+    }
+    private async void Logout()
+    {
+        await LocalStorage.RemoveItemAsync("token");
+        await AuthStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("");
+    }
+     private async void Profile()
+    {
+        var authstate = await AuthStateProvider.GetAuthenticationStateAsync();
+        var user = authstate.User;
+        profileLink = "korisnik/" + user.Identity.Name;
+        NavigationManager.NavigateTo(profileLink);
+    }
+
+}

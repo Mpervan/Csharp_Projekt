@@ -1,0 +1,36 @@
+﻿@page "/"
+@page "/{kategorija}"
+@using ReceptiBlazor.Shared
+@inject IKategorijaService KategorijaService
+
+@if (Ktg != null)
+{
+	<h1>@Ktg.Name</h1>
+	<ReceptList CategoryId="@Ktg.Id" />
+}
+else
+{
+	<h1>Svi dostupni recepti</h1>
+	<ReceptList />
+}
+
+
+
+@code{
+	[Parameter]
+	public string kategorija { get; set; }
+
+	private Kategorija Ktg = null;
+
+	protected override void OnParametersSet()
+	{
+		if (kategorija != null)
+		{
+			Ktg = KategorijaService.kategorije.FirstOrDefault(c => c.Url.ToLower().Equals(kategorija.ToLower()));
+		}
+		else
+		{
+			Ktg = null;
+		}
+	}
+}

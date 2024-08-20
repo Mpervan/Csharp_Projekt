@@ -1,0 +1,12 @@
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\bin\Debug\net6.0\ReceptiNoviApp.Shared.deps.json
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\bin\Debug\net6.0\ReceptiNoviApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\bin\Debug\net6.0\ReceptiNoviApp.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.csproj.AssemblyReference.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.AssemblyInfoInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.AssemblyInfo.cs
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\refint\ReceptiNoviApp.Shared.dll
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ReceptiNoviApp.Shared.pdb
+C:\Users\Matea\Documents\F A K S\C# seminar\ReceptiNoviApp\Shared\obj\Debug\net6.0\ref\ReceptiNoviApp.Shared.dll

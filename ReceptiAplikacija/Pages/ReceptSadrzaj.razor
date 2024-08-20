@@ -1,0 +1,35 @@
+﻿@page "/recept/{id}"
+@inject IReceptService ReceptService
+
+<div class="media-velika">
+	<div class="media-img-big-wrapper mr-2">
+		<img class="media-img-big" src="@recept.Img" alt="@recept.Name"/>
+	</div>
+	<div class="media-body-velika">
+		<div class="naslovi">
+		<h2>@recept.Name</h2>
+		</div>
+		<div class="priprema">
+		<h5>Sastojci: @recept.Sastojci</h5>
+		<h6>@recept.Vege</h6>
+		<h4>Priprema:</h4>
+		<p>@recept.Priprema</p>
+		</div>
+	</div>
+</div>
+
+@code {
+
+	private ReceptiAplikacija.Data.Recept recept = null;
+
+	[Parameter]
+	public string Id { get; set; }
+	protected override void OnInitialized()
+	{
+		if(ReceptService.Recepti == null || ReceptService.Recepti.Count ==0)
+		{
+			ReceptService.LoadRecepti();
+		}
+		recept = ReceptService.Recepti.FirstOrDefault(p => p.Id == Int32.Parse(Id));
+	}
+}

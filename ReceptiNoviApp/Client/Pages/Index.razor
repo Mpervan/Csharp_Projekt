@@ -1,0 +1,49 @@
+﻿@page "/"
+@page "/{kategorija}"
+@using ReceptiNoviApp.Shared
+@using ReceptiNoviApp.Client.Services.KategorijaServices
+@inject IKategorijaService KategorijaService
+@inject AuthenticationStateProvider AuthStateProvider
+
+@if (Ktg != null)
+{
+	<h1>@Ktg.Name</h1>
+	<ReceptList CategoryId="@Ktg.Id" />
+}
+else
+{
+	<AuthorizeView>
+                <NotAuthorized>
+                    <h1>Svi dostupni recepti</h1>
+            </NotAuthorized>
+                <Authorized>
+                   <h1>Dobro došao/la @context.User.Identity.Name</h1>
+                </Authorized>
+                
+            </AuthorizeView>
+	<ReceptList />
+}
+
+
+
+@code{
+	[Parameter]
+	public string kategorija { get; set; }
+
+	private Kategorija Ktg = null;
+
+	private List<Kategorija> Kategorije = new List<Kategorija>();
+
+	protected override async Task OnParametersSetAsync()
+	{
+		Kategorije = await KategorijaService.LoadKategorije();
+		if (kategorija != null)
+		{
+			Ktg = Kategorije.FirstOrDefault(c => c.Url.ToLower().Equals(kategorija.ToLower()));
+		}
+		else
+		{
+			Ktg = null;
+		}
+	}
+}

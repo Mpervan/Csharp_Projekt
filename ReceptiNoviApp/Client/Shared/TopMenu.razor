@@ -1,0 +1,10 @@
+﻿@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthStateProvider
+
+<AuthorizeView>
+	<Authorized>
+		<NavLink class="nav-link" href="post">
+			<span class="oi oi-pencil" aria-hidden="true"></span> Objavi recept
+		</NavLink>
+	</Authorized>
+</AuthorizeView>

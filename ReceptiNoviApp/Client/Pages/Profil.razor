@@ -1,0 +1,33 @@
+﻿@page "/korisnik/{name}"
+@using ReceptiNoviApp.Client.Services.KorisnikServices
+@using ReceptiNoviApp.Shared
+@inject IKorisnikService KorisnikService
+
+<div class="media-velika">
+	<div class="Recept-body">
+		<div class="naslovi">
+		<h2>@korisnik.Username</h2>
+		</div>
+		<div class="email">
+		<h5>E-mail: @korisnik.Email</h5>
+		<h6>@korisnik.Role</h6>
+		</div>
+	</div>
+	<div>
+	<h3>Recepti:</h3>
+	<ProfileList UserId=korisnik.Id />
+	</div>
+</div>
+
+@code {
+	private Korisnik korisnik = new Korisnik();
+
+	[Parameter]
+	public string Name { get; set; }
+	protected override async Task OnInitializedAsync()
+	{
+		korisnik = await KorisnikService.GetKorisnikByName(Name);
+	}
+
+}
+
